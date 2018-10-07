@@ -1,0 +1,101 @@
+<section class="hero is-white is-small">
+
+  <!-- Hero navbar -->
+  <div class="hero-head">
+    <nav class="navbar">
+      <div class="container">
+        <span class="navbar-burger burger" [class.is-active]="burgerSwitch" (click)="toggleBurger()">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+        <div class="navbar-menu" [class.is-active]="burgerSwitch">
+          <div class="navbar-start">
+            <a class="navbar-item" routerLink="/" routerLinkActive="is-active" [routerLinkActiveOptions]="{ exact : true }">
+              <span class="icon"><i class="fas fa-home"></i></span><span>Home</span>
+            </a>
+            <a class="navbar-item" routerLink="/books" routerLinkActive="is-active"><span class="icon">
+              <i class="fas fa-code-branch"></i></span><span>Books API</span>
+            </a>
+          </div>
+          <div class="navbar-end">
+            <a class="navbar-item" *ngIf="!user" routerLink="/users/register" routerLinkActive="is-active">
+              <span class="icon"><i class="fas fa-user-plus"></i></span><span>Register</span>
+            </a>
+            <a class="navbar-item" *ngIf="!user" routerLink="/users/login" routerLinkActive="is-active">
+              <span class="icon"><i class="fas fa-sign-in-alt"></i></span><span>Login</span>
+            </a>
+            <a class="navbar-item" *ngIf="user" routerLink="/users/edit-profile" routerLinkActive="is-active">
+              <img class="image roundImage" *ngIf="user" src="{{ user.imageURL }}" alt="Profile Picture">
+              <span>Edit Profile</span>
+            </a>
+            <a class="navbar-item" *ngIf="user" (click)="logout()">
+              <span class="icon"><i class="fas fa-sign-out-alt"></i></span><span>Logout</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+
+
+  </div>
+
+</section>
+
+<!-- Header Box for MEAN Stack versions-->
+<div class="box cta">
+  <div class="has-text-centered">
+    <div class="field is-grouped is-grouped-multiline">
+
+      <!--  MongoDB -->
+      <div class="control">
+        <div class="tags has-addons">
+          <span class="tag is-dark">MongoDB</span>
+          <span class="tag is-link">v3.4.13</span>
+        </div>
+      </div>
+
+      <!--  Mongoose -->
+      <div class="control">
+        <div class="tags has-addons">
+          <span class="tag is-dark">Mongoose</span>
+          <span class="tag is-link">v5.2.8</span>
+        </div>
+      </div>
+
+      <!-- Express -->
+      <div class="control">
+        <div class="tags has-addons">
+          <span class="tag is-dark">Express</span>
+          <span class="tag is-link">v4.16.3</span>
+        </div>
+      </div>
+
+      <!-- Angular CLI -->
+      <div class="control">
+        <div class="tags has-addons">
+          <span class="tag is-danger">Angular CLI</span>
+          <span class="tag is-link">v7.0.0-rc.1</span>
+        </div>
+      </div>
+
+      <!-- Angular -->
+      <div class="control">
+        <div class="tags has-addons">
+          <span class="tag is-danger">Angular</span>
+          <span class="tag is-link">v6.1.9</span>
+        </div>
+      </div>
+
+      <!-- NodeJS -->
+      <div class="control">
+        <div class="tags has-addons">
+          <span class="tag is-success">NodeJS</span>
+          <span class="tag is-link">v9.9.0</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
